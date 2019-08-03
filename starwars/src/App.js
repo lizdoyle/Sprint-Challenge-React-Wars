@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.scss';
 
-import StarWars from "./components/StarWars";
+import Card from "./components/Card";
 
 import axios from "axios";
 
@@ -12,7 +12,7 @@ const App = () => {
 
   const [character, setCharacter] = useState('');
 
-  console.log(character);
+  // console.log(character[0]);
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -37,28 +37,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <div className="StarWars">
-            { character ?
-            <StarWars 
-              name={character.name} 
-              height={character.height} 
-              mass={character.mass} 
-              hair={character.hair_color}
-              skin={character.skin_color}
-              eyes={character.eye_color}
-              bday={character.birth_year}
-              gender={character.gender}
-              species={character.species}
-              homeworld={character.homeworld}
-              films={character.films}
-              vehicles={character.vehicles}
-              starships={character.starships}
-              created={character.created}
-              edited={character.edited}
-              url={character.url} 
-    
-            />  : <div> Loading StarWars Characters</div> }
-          </div>
+      <Card character={character}  />
     </div>
   );
 

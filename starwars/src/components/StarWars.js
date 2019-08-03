@@ -2,42 +2,53 @@ import React, {useState} from "react";
 
 import './StarWars.scss';
 
+import Card from "./Card"
+
 
 const StarWars = (props) => {
 
-    const [setCharacter] = useState('');
-     
-    const showAboutChar = char => {
-       return <div>
-            <h2> {props.name} </h2>
-            <p> {props.height} </p>
-            <p> {props.mass} </p>
-            <p> {props.hair_color} </p>
-            <p> {props.skin_color} </p>
-            <p> {props.eye_color} </p>
-            <p> {props.gender} </p>
-            <p> {props.birth_year} </p>
-            <p> {props.species} </p> 
-            <p> {props.homeworld} </p> 
-            <div>{props.films} </div>
-            <div> {props.vehicles}</div>
-            <div> {props.starships}</div>
-            <p> {props.created}</p>
-            <p> {props.edited}</p>
-            <div> {props.url} </div>
-        </div> 
+    Array.from(props.character).map(
+        let name = {props.character.name}
+        let height = {props.character.height}
+        let mass = {props.character.mass} 
+        let color = {props.character.hair_color}
+        let skin = {props.character.skin_color}
+        let eyes = {props.character.eye_color} 
+        let gender = {props.character.gender} 
+        let bday = {props.character.birth_year} 
+        let species = {props.character.species} 
+        let homeworld = {props.character.homeworld} 
+        let films = {props.character.films}
+        let vehicles = {props.character.vehicles}
+        let starships = {props.character.starships}
+        let created =  {props.character.created}
+        let edited = {props.character.edited}
+        let url = {props.character.url} 
 
-    }
-    
+    )
+     
+
       
       return (
-        <div>
-            <div className="AboutChar"> 
-               {setCharacter.map(showAboutChar)}
-            </div>
-
-
-        </div>
+        <Card 
+            name={name}
+            height={height}
+            mass={mass}
+            color={color}
+            skin={skin}
+            eyes={eyes}
+            gender={gender}
+            bday={bday}
+            species={species}
+            homeworld={homeworld}
+            films={films}
+            vehicles={vehicles}
+            starships={starships}
+            created={created}
+            edited={edited}
+            url={url}
+            
+            />
        
       )}
 
