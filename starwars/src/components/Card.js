@@ -58,7 +58,7 @@ const Card = (props) => {
                             edited={edited}
                             url={url}
                             
-             />;})}
+             />;})} 
              
              
         </div>
