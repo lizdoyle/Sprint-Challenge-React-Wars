@@ -1,32 +1,50 @@
 import React from "react";
 
+import StarWars from "./StarWars"
+
 const Card = (props) => {
 
     return (
-        <div className="Card">
-            { Array.from(props.character).map( i, cb) => {
-                let name = i['name']
-                let height = i['height']
-                let mass = i['mass'] 
-                let color = [hair_color]
-                let skin = ['skin_color']
-                let eyes = eye_color
-                let gender = gender
-                let bday = birth_year
-                let species = species
-                let homeworld = props.character.homeworld
-                let films = props.character.films
-                let vehicles = props.character.vehicles
-                let starships = props.character.starships
-                let created =  props.character.created
-                let edited = props.character.edited
-                let url = props.character.url}
-             })
+        <div className="swcard"> 
+            { Array.from(props.character).map( (i, cb) => { 
+                let name = i['name'];
+                let height= i['height'];
+                let mass = i['mass'];
+                let color = i['hair_color'];
+                let skin = i['skin_color'];
+                let eyes = i['eye_color'];
+                let gender = i['gender'];
+                let bday = i['birth_year'];
+                let species = i['species'];
+                let homeworld = i['homeworld'];
+                let films = i['films'];
+                let vehicles = i['vehicles'];
+                let starships = i['starships'];
+                let created =  i['created'];
+                let edited = i['edited'];
+                let url = i['url'];
+             console.log(url);
 
-             return <Character 
+             return <StarWars key={name} 
+                            name={name}
+                            height={height}
+                            mass={mass}
+                            color={color}
+                            skin={skin}
+                            eyes={eyes}
+                            gender={gender}
+                            bday={bday}
+                            species={species}
+                            homeworld={homeworld}
+                            films={films}
+                            vehicles={vehicles}
+                            starships={starships}
+                            created={created}
+                            edited={edited}
+                            url={url}
+                            
+             />;})}
         </div>
-
-    )
 
     )
 
