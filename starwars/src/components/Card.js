@@ -4,6 +4,8 @@ import StarWars from "./StarWars"
 
 const Card = (props) => {
 
+    
+
     return (
         <div className="swcard"> 
             { Array.from(props.character).map( (i, cb) => { 
@@ -23,7 +25,20 @@ const Card = (props) => {
                 let created =  i['created'];
                 let edited = i['edited'];
                 let url = i['url'];
-             console.log(url);
+                
+                
+                
+
+            //    { Array.from(props.character).map( (i, cb) => { 
+            //         let species = i['species'];
+            //         let films = i['films'];
+            //         let vehicles = i['vehicles'];
+            //         let starships = i['starships'];
+
+            //     })};
+
+            //  console.log(url);
+             console.log(films);
 
              return <StarWars key={name} 
                             name={name}
@@ -44,7 +59,11 @@ const Card = (props) => {
                             url={url}
                             
              />;})}
+             
+             
         </div>
+        
+        
 
     )
 
